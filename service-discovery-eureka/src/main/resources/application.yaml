@@ -5,6 +5,9 @@ spring:
   application:
     name: service-discovery-eureka
 
+  profiles:
+    active: ${ENV_SPRING_PROFILES_ACTIVE:dev}
+
   config:
     import: optional:configserver:${ENV_CONFIG_SERVER_URL:http://localhost:8888}     # URL do config server
 
