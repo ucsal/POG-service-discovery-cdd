@@ -1,0 +1,18 @@
+server:
+  port: ${ENV_SERVER_PORT:8761}
+
+spring:
+  application:
+    name: service-discovery-eureka
+
+  config:
+    import: optional:configserver:http://localhost:8888     # URL do config server
+
+  cloud:
+    config:
+      fail-fast: true    # falha imediato se não conseguir carregar as configs
+
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
