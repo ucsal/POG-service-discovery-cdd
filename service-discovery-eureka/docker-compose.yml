@@ -1,0 +1,13 @@
+services:
+  service-discovery-eureka:
+    build: .
+    container_name: service-discovery-eureka
+    ports:
+      - "8761:8761"
+
+    networks:
+      - cdd-network
+
+networks:
+  cdd-network:
+    external: true
